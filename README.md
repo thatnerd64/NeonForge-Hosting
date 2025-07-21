@@ -1,6 +1,6 @@
-# C+T Hosting Website
+# C+N Hosting Website
 
-A modern, minimalist website for C+T Hosting (Chris + Neon Hosting) featuring a sleek black background with neon accents and professional hosting services presentation.
+A modern, minimalist website for C+N Hosting (Chris + Neon Hosting) featuring a sleek black background with neon accents and professional hosting services presentation.
 
 ## 🎨 Design Features
 
@@ -37,7 +37,7 @@ npm start
 ## 📁 Project Structure
 
 ```
-ct-hosting-website/
+cn-hosting-website/
 ├── index.html          # Main HTML file
 ├── styles.css          # CSS styles and animations
 ├── script.js           # JavaScript functionality
@@ -103,7 +103,7 @@ To deploy this website:
 ## 📞 Support
 
 For questions or customization requests, please contact:
-- Email: hello@cthosting.com
+- Email: hello@cnhosting.com
 - Phone: +1 (555) 123-4567
 
 ## 📄 License
@@ -112,4 +112,4 @@ This project is licensed under the MIT License.
 
 ---
 
-**C+T Hosting** - Premium Web Hosting Solutions
+**C+N Hosting** - Premium Web Hosting Solutions
