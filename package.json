@@ -1,0 +1,22 @@
+{
+  "name": "cn-hosting-website",
+  "version": "1.0.0",
+  "description": "C+N Hosting - Premium Web Hosting Solutions",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "hosting",
+    "web-hosting",
+    "vps",
+    "dedicated-servers",
+    "website"
+  ],
+  "author": "C+N Hosting",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
