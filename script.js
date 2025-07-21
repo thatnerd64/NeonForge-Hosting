@@ -231,8 +231,8 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(typeWriter, 500);
     }
     
-    // Add particle effect to hero section
-    createParticles();
+    // Particle effect disabled for cohesive background
+    // createParticles();
 });
 
 // Simple particle effect
