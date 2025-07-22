@@ -50,7 +50,7 @@ cn-hosting-website/
 ## 🎯 Website Sections
 
 1. **Hero Section**: Eye-catching introduction with animated server icons and "Pay As You Go" messaging
-2. **Who We Are For**: Targeted audience section highlighting gamers, small projects, and backup storage needs
+2. **Who We Are For**: Targeted audience section highlighting gamers, small projects, and developers
 3. **Services**: Four simple plans (LFIT, Starter, Growing, Pro) with clear feature lists
 4. **Pricing**: Four transparent pricing tiers ($0.50, $2, $5, $10 per month) with no hidden fees
 5. **Contact**: Smart contact form with plan selection auto-fill and Discord/email support
@@ -136,7 +136,7 @@ When users click on a pricing plan's "Choose Plan" button:
 The website specifically caters to:
 - **Gamers** needing affordable game servers
 - **Small Projects** requiring simple hosting without complexity
-- **Backup Storage** users wanting reliable, cheap storage
+- **Developers** needing testing environments or portfolio hosting
 
 ### Pricing Philosophy
 - No contracts
