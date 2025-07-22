@@ -1,6 +1,6 @@
 # C+N Hosting Website
 
-A modern, pay-as-you-go web hosting website featuring affordable plans starting at just $0.99/month. Built for gamers, small projects, and anyone who needs simple, reliable hosting without enterprise pricing.
+A modern, pay-as-you-go web hosting website featuring affordable plans starting at just $0.50/month. Built for gamers, small projects, Discord bots, and anyone who needs simple, reliable hosting without enterprise pricing.
 
 ## 🎨 Design Features
 
@@ -52,7 +52,7 @@ cn-hosting-website/
 1. **Hero Section**: Eye-catching introduction with animated server icons and "Pay As You Go" messaging
 2. **Who We Are For**: Targeted audience section highlighting gamers, small projects, and backup storage needs
 3. **Services**: Four simple plans (LFIT, Starter, Growing, Pro) with clear feature lists
-4. **Pricing**: Four transparent pricing tiers ($0.99, $2, $5, $10 per month) with no hidden fees
+4. **Pricing**: Four transparent pricing tiers ($0.50, $2, $5, $10 per month) with no hidden fees
 5. **Contact**: Smart contact form with plan selection auto-fill and Discord/email support
 6. **Disclaimer**: Honest transparency about being a small operation
 7. **Footer**: Quick links, support options, and social connections
