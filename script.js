@@ -1,10 +1,44 @@
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const navbar = document.querySelector('.navbar');
+
+// Add scroll effect to navbar
+let lastScrollY = window.scrollY;
+let scrollTimer;
+
+window.addEventListener('scroll', () => {
+    // Add scrolled class
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    
+    // Hide/show navbar on mobile while scrolling
+    if (window.innerWidth <= 768) {
+        clearTimeout(scrollTimer);
+        
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            // Scrolling down
+            navbar.classList.add('hide');
+        } else {
+            // Scrolling up
+            navbar.classList.remove('hide');
+        }
+        
+        scrollTimer = setTimeout(() => {
+            navbar.classList.remove('hide');
+        }, 1500);
+        
+        lastScrollY = window.scrollY;
+    }
+});
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    navbar.classList.remove('hide'); // Ensure navbar is visible when menu opens
     const expanded = navMenu.classList.contains('active');
     hamburger.setAttribute('aria-expanded', expanded);
     
@@ -71,6 +105,7 @@ function updateActiveNav() {
 }
 
 window.addEventListener('scroll', updateActiveNav);
+document.addEventListener('DOMContentLoaded', updateActiveNav);
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
