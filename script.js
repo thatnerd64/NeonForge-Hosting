@@ -36,6 +36,18 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+    if (navMenu.classList.contains('active') && 
+        !navMenu.contains(e.target) && 
+        !hamburger.contains(e.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+    }
+});
+
 // Active navigation highlighting
 function updateActiveNav() {
     const sections = document.querySelectorAll('section[id]');
