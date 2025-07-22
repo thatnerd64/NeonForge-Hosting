@@ -92,21 +92,41 @@ body {
 }
 
 .nav-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(15px);
     display: flex;
+    flex-direction: column;
     list-style: none;
-    gap: 2.5rem;
+    gap: 1rem;
     align-items: center;
+    padding: 2rem 0;
+    transition: top 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 1px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+}
+
+.nav-menu.active {
+    top: var(--header-h);
+    display: flex;
 }
 
 .nav-menu a {
     color: #ffffff;
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem;
     border-radius: 6px;
     position: relative;
+    display: block;
+    width: 200px;
+    text-align: center;
 }
 
 .nav-menu a:hover {
@@ -141,7 +161,7 @@ body {
 }
 
 .hamburger {
-    display: none;
+    display: flex;
     flex-direction: column;
     cursor: pointer;
     gap: 4px;
@@ -859,46 +879,6 @@ body {
     /* tighten flex spacing to avoid horizontal overflow */
     .nav-container {
         gap: 0;
-    }
-    .hamburger {
-        display: flex;
-        margin-left: auto;
-    }
-
-    /* make sure the slide-down menu sits just below the shorter bar */
-    .nav-menu.active {
-        top: var(--header-h);
-    }
-    
-    .nav-menu {
-        position: fixed;
-        top: -100%;
-        left: 0;
-        flex-direction: column;
-        background-color: rgba(0, 0, 0, 0.98);
-        backdrop-filter: blur(15px);
-        width: 100%;
-        text-align: center;
-        transition: 0.3s;
-        padding: 2rem 0;
-        gap: 1rem;
-        border-bottom: 1px solid #333;
-        z-index: 1001;
-    }
-    
-    .nav-menu.active {
-        top: 70px;
-    }
-    
-    .nav-menu a {
-        padding: 1rem 2rem;
-        margin: 0.5rem 1rem;
-        border-radius: 8px;
-        font-size: 1.1rem;
-    }
-    
-    .nav-menu a::after {
-        display: none;
     }
     
     .hero-container {
