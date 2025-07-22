@@ -1088,11 +1088,6 @@ section {
     }
 }
 
-/* Smooth scroll behavior for plan selection */
-html {
-    scroll-behavior: smooth;
-}
-
 /* Visual feedback for plan selection buttons */
 .pricing-card .btn:active {
     transform: scale(0.95);
