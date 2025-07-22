@@ -363,3 +363,19 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+// Auto-fill contact form subject based on selected pricing plan
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.pricing-card a[href="#contact"]').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const card = btn.closest('.pricing-card');
+            if (!card) return;
+            const planName = card.querySelector('.pricing-header h3')?.textContent.trim();
+            const price = card.querySelector('.price .amount')?.textContent.trim();
+            const subjectInput = document.querySelector('#contact input[placeholder="Subject"]');
+            if (subjectInput && planName && price) {
+                subjectInput.value = `$${price} ${planName} Plan`;
+            }
+        });
+    });
+});
+
