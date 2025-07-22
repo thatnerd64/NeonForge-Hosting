@@ -1,14 +1,15 @@
 # C+N Hosting Website
 
-A modern, minimalist website for C+N Hosting (Chris + Neon Hosting) featuring a sleek black background with neon accents and professional hosting services presentation.
+A modern, pay-as-you-go web hosting website featuring affordable plans starting at $2/month. Built for gamers, small projects, and anyone who needs simple, reliable hosting without enterprise pricing.
 
 ## 🎨 Design Features
 
 - **Minimalist Design**: Clean, modern interface with black background
-- **Neon Accents**: Cyan and magenta gradient highlights for visual appeal
+- **Neon Accents**: Orange (#FF8C00) and pink (#FFB6C1) highlights for visual appeal  
 - **Responsive Layout**: Fully responsive design that works on all devices
-- **Interactive Elements**: Smooth animations, hover effects, and particle animations
-- **Professional Branding**: C+T Hosting branding throughout
+- **Interactive Elements**: Smooth animations, hover effects, and visual feedback
+- **Professional Branding**: C+N Hosting branding with custom logo design
+- **Accessibility**: Built with Atkinson Hyperlegible font for better readability
 
 ## 🚀 Quick Start
 
@@ -48,22 +49,25 @@ cn-hosting-website/
 
 ## 🎯 Website Sections
 
-1. **Hero Section**: Eye-catching introduction with animated server icons
-2. **Services**: Three hosting tiers (Shared, VPS, Dedicated)
-3. **Pricing**: Three pricing plans with feature comparisons
-4. **Contact**: Contact form and company information
-5. **Footer**: Links and social media connections
+1. **Hero Section**: Eye-catching introduction with animated server icons and "Pay As You Go" messaging
+2. **Who We Are For**: Targeted audience section highlighting gamers, small projects, and backup storage needs
+3. **Services**: Three simple plans (Starter, Growing, Pro) with clear feature lists
+4. **Pricing**: Three transparent pricing tiers ($2, $5, $10 per month) with no hidden fees
+5. **Contact**: Smart contact form with plan selection auto-fill and Discord/email support
+6. **Disclaimer**: Honest transparency about being a small operation
+7. **Footer**: Quick links, support options, and social connections
 
 ## 🎨 Customization
 
 ### Colors
 The website uses a consistent color scheme:
-- **Primary**: Black (#000000)
-- **Accent**: Cyan (#00ffff) and Magenta (#ff00ff)
+- **Primary**: Black (#000000) background
+- **Accent**: Orange (#FF8C00) and Pink (#FFB6C1)
+- **Success**: Green (#00ff88) for highlights and CTAs
 - **Text**: White (#ffffff) and light gray (#cccccc)
 
 ### Fonts
-- **Primary**: Inter (Google Fonts)
+- **Primary**: Atkinson Hyperlegible (Google Fonts) - chosen for excellent readability
 - **Icons**: Font Awesome 6.0
 
 ### Key Features to Customize
@@ -82,12 +86,19 @@ The website is fully responsive and includes:
 
 ## 🔧 Technical Features
 
+- **Smart Form Auto-fill**: Clicking pricing plans auto-fills contact form with:
+  - Plan selection in subject line
+  - Email persistence using localStorage
+  - Intelligent field focusing based on what's empty
+  - Visual highlighting of fields needing attention
+  - Pre-filled message templates
 - **Smooth Scrolling**: Navigation links smoothly scroll to sections
-- **Form Validation**: Contact form with email validation
+- **Form Validation**: Contact form with email validation and persistence
 - **Animations**: Intersection Observer for scroll-triggered animations
-- **Particle Effects**: Floating particles in the hero section
-- **Mobile Navigation**: Collapsible hamburger menu
+- **Mobile Navigation**: Auto-hiding navbar on scroll with hamburger menu
 - **Loading Animations**: Smooth page load transitions
+- **Notification System**: User-friendly feedback messages
+- **Typing Effect**: Animated hero title on page load
 
 ## 🌐 Deployment
 
@@ -102,14 +113,38 @@ To deploy this website:
 
 ## 📞 Support
 
-For questions or customization requests, please contact:
-- Email: hello@cnhosting.com
-- Phone: +1 (555) 123-4567
+For questions or support, please contact:
+- Discord: that_neon
+- Email: baconsgigaserver@gmail.com
+- Discord Server: https://discord.gg/FVTtydJ965
 
 ## 📄 License
 
 This project is licensed under the MIT License.
 
+## 💡 Special Features
+
+### Email Auto-fill System
+When users click on a pricing plan's "Choose Plan" button:
+1. The contact form subject is automatically filled with the selected plan details
+2. If the user has previously submitted the form, their email is saved and can be reused
+3. Empty fields are highlighted with a green pulsing animation
+4. Smart focus management guides users through the form
+5. Pre-filled message templates for quick inquiries
+
+### Target Audience Focus
+The website specifically caters to:
+- **Gamers** needing affordable game servers
+- **Small Projects** requiring simple hosting without complexity
+- **Backup Storage** users wanting reliable, cheap storage
+
+### Pricing Philosophy
+- No contracts
+- No hidden fees
+- Pay only for what you use
+- Start at just $2/month
+- Scale up when needed
+
 ---
 
-**C+N Hosting** - Premium Web Hosting Solutions
+**C+N Hosting** - Simple, Affordable Hosting for Real People

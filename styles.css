@@ -1064,3 +1064,32 @@ section {
         height: 100px;
     }
 }
+
+/* Enhanced form field highlighting for auto-fill */
+.form-group input.highlight-field,
+.form-group textarea.highlight-field {
+    animation: pulseHighlight 0.5s ease;
+    border-color: #00ff88 !important;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.3) !important;
+}
+
+@keyframes pulseHighlight {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 rgba(0, 255, 136, 0.3);
+    }
+    50% {
+        transform: scale(1.02);
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+    }
+}
+
+/* Visual feedback for plan selection buttons */
+.pricing-card .btn:active {
+    transform: scale(0.95);
+    transition: transform 0.1s ease;
+}
