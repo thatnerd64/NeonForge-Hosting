@@ -105,6 +105,7 @@ function updateActiveNav() {
 }
 
 window.addEventListener('scroll', updateActiveNav);
+document.addEventListener('DOMContentLoaded', updateActiveNav);
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -325,32 +326,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Particle effect disabled for cohesive background
     // createParticles();
 });
-
-// Active navigation highlighting
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
-
-function highlightNavigation() {
-    const scrollY = window.scrollY;
-    
-    sections.forEach(section => {
-        const sectionHeight = section.offsetHeight;
-        const sectionTop = section.offsetTop - 100;
-        const sectionId = section.getAttribute('id');
-        
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
-}
-
-window.addEventListener('scroll', highlightNavigation);
-document.addEventListener('DOMContentLoaded', highlightNavigation);
 
 // Simple particle effect
 function createParticles() {
