@@ -32,6 +32,16 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Handle window resize - close mobile menu and reset styles
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+        // If screen becomes larger than mobile breakpoint, reset mobile menu
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
 // Active navigation highlighting
 function updateActiveNav() {
     const sections = document.querySelectorAll('section[id]');
