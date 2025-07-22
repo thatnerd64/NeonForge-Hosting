@@ -142,7 +142,7 @@ The website specifically caters to:
 - No contracts
 - No hidden fees
 - Pay only for what you use
-- Start at just $2/month
+- Start at just $0.50/month
 - Scale up when needed
 
 ---
