@@ -35,6 +35,7 @@ window.addEventListener('scroll', () => {
     }
 });
 
+if (hamburger && navMenu) {
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
@@ -82,6 +83,7 @@ document.addEventListener('click', (e) => {
     }
 });
 
+}
 // Active navigation highlighting
 function updateActiveNav() {
     const sections = document.querySelectorAll('section[id]');
