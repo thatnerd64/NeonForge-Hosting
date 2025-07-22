@@ -820,8 +820,8 @@ body {
     
     .nav-menu {
         position: fixed;
-        left: -100%;
-        top: 70px;
+        top: -100%;
+        left: 0;
         flex-direction: column;
         background-color: rgba(0, 0, 0, 0.98);
         backdrop-filter: blur(15px);
@@ -831,10 +831,11 @@ body {
         padding: 2rem 0;
         gap: 1rem;
         border-bottom: 1px solid #333;
+        z-index: 999;
     }
     
     .nav-menu.active {
-        left: 0;
+        top: 70px;
     }
     
     .nav-menu a {
