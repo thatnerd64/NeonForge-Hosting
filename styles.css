@@ -861,6 +861,7 @@ body {
         gap: 0;
     }
     .hamburger {
+        display: flex;
         margin-left: auto;
     }
 
