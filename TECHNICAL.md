@@ -29,6 +29,7 @@ This is a single-page application (SPA) built with vanilla HTML, CSS, and JavaSc
 ### 1. Email Auto-fill System
 Triggered when pricing plan buttons are clicked. Auto-fills contact form with:
 - Plan name and price in subject
+- Works for all 4 plans: LFIT ($0.50 - ultralight hosting for bots/scripts), Starter ($2), Growing ($5), and Pro ($10)
 - Smart field focusing
 - Email persistence with localStorage
 - Visual feedback animations
