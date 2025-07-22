@@ -5,9 +5,11 @@ const navMenu = document.querySelector('.nav-menu');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    const expanded = navMenu.classList.contains('active');
+    hamburger.setAttribute('aria-expanded', expanded);
     
     // Prevent body scroll when menu is open
-    if (navMenu.classList.contains('active')) {
+    if (expanded) {
         document.body.style.overflow = 'hidden';
     } else {
         document.body.style.overflow = '';
@@ -19,6 +21,7 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     });
 });
@@ -28,6 +31,7 @@ window.addEventListener('scroll', () => {
     if (navMenu.classList.contains('active')) {
         hamburger.classList.remove('active');
         navMenu.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
     }
 });
