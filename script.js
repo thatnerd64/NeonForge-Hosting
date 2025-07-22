@@ -136,6 +136,13 @@ window.addEventListener('scroll', () => {
 // Contact form handling
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
+    // Auto-restore saved email on page load
+    const savedEmail = localStorage.getItem('userEmail');
+    const emailInput = contactForm.querySelector('input[type="email"]');
+    if (savedEmail && emailInput) {
+        emailInput.value = savedEmail;
+    }
+    
     contactForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -156,6 +163,9 @@ if (contactForm) {
             showNotification('Please enter a valid email address', 'error');
             return;
         }
+        
+        // Save email for future use
+        localStorage.setItem('userEmail', email);
         
         // Simulate form submission
         showNotification('Message sent successfully! We\'ll get back to you soon.', 'success');
@@ -372,9 +382,66 @@ document.addEventListener('DOMContentLoaded', () => {
             const planName = card.querySelector('.pricing-header h3')?.textContent.trim();
             const price = card.querySelector('.price .amount')?.textContent.trim();
             const subjectInput = document.querySelector('#contact input[placeholder="Subject"]');
+            const emailInput = document.querySelector('#contact input[type="email"]');
+            const nameInput = document.querySelector('#contact input[placeholder="Your Name"]');
+            
             if (subjectInput && planName && price) {
-                subjectInput.value = `$${price} ${planName} Plan`;
-                subjectInput.focus();
+                // Auto-fill subject with plan details
+                subjectInput.value = `Interest in ${planName} Plan ($${price}/month)`;
+                
+                // Focus on the name field if it's empty, otherwise focus on email if it's empty
+                if (nameInput && !nameInput.value) {
+                    nameInput.focus();
+                    // Add visual highlight with animation
+                    nameInput.classList.add('highlight-field');
+                    setTimeout(() => {
+                        nameInput.classList.remove('highlight-field');
+                    }, 2000);
+                } else if (emailInput && !emailInput.value) {
+                    // Check if we have a saved email
+                    const savedEmail = localStorage.getItem('userEmail');
+                    if (savedEmail) {
+                        // Ask user if they want to use saved email
+                        if (confirm(`Use your saved email: ${savedEmail}?`)) {
+                            emailInput.value = savedEmail;
+                            // Move to message field
+                            const messageArea = document.querySelector('#contact textarea');
+                            if (messageArea) {
+                                messageArea.focus();
+                                if (!messageArea.value) {
+                                    messageArea.value = `Hi, I'm interested in the ${planName} plan. Could you please provide more information about getting started?`;
+                                }
+                            }
+                        } else {
+                            emailInput.focus();
+                            // Add visual highlight with animation
+                            emailInput.classList.add('highlight-field');
+                            setTimeout(() => {
+                                emailInput.classList.remove('highlight-field');
+                            }, 2000);
+                        }
+                    } else {
+                        emailInput.focus();
+                        // Add visual highlight with animation
+                        emailInput.classList.add('highlight-field');
+                        setTimeout(() => {
+                            emailInput.classList.remove('highlight-field');
+                        }, 2000);
+                    }
+                } else {
+                    // If both are filled, focus on the message area
+                    const messageArea = document.querySelector('#contact textarea');
+                    if (messageArea) {
+                        messageArea.focus();
+                        // Pre-fill with a helpful message template
+                        if (!messageArea.value) {
+                            messageArea.value = `Hi, I'm interested in the ${planName} plan. Could you please provide more information about getting started?`;
+                        }
+                    }
+                }
+                
+                // Show a helpful notification
+                showNotification(`Selected ${planName} plan - Please fill in your contact details`, 'info');
             }
         });
     });
