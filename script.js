@@ -1,10 +1,44 @@
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const navbar = document.querySelector('.navbar');
+
+// Add scroll effect to navbar
+let lastScrollY = window.scrollY;
+let scrollTimer;
+
+window.addEventListener('scroll', () => {
+    // Add scrolled class
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+    
+    // Hide/show navbar on mobile while scrolling
+    if (window.innerWidth <= 768) {
+        clearTimeout(scrollTimer);
+        
+        if (window.scrollY > lastScrollY && window.scrollY > 100) {
+            // Scrolling down
+            navbar.classList.add('hide');
+        } else {
+            // Scrolling up
+            navbar.classList.remove('hide');
+        }
+        
+        scrollTimer = setTimeout(() => {
+            navbar.classList.remove('hide');
+        }, 1500);
+        
+        lastScrollY = window.scrollY;
+    }
+});
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
     navMenu.classList.toggle('active');
+    navbar.classList.remove('hide'); // Ensure navbar is visible when menu opens
     const expanded = navMenu.classList.contains('active');
     hamburger.setAttribute('aria-expanded', expanded);
     
@@ -291,6 +325,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Particle effect disabled for cohesive background
     // createParticles();
 });
+
+// Active navigation highlighting
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-menu a[href^="#"]');
+
+function highlightNavigation() {
+    const scrollY = window.scrollY;
+    
+    sections.forEach(section => {
+        const sectionHeight = section.offsetHeight;
+        const sectionTop = section.offsetTop - 100;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', highlightNavigation);
+document.addEventListener('DOMContentLoaded', highlightNavigation);
 
 // Simple particle effect
 function createParticles() {
