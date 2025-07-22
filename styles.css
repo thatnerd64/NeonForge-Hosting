@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --header-h: 80px; /* Default header height for desktop and larger screens */
+}
+
 html, body {
     width: 100%;
     overflow-x: hidden;
@@ -840,7 +844,7 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    // Override the shared header height for small screens
+    /* Override the shared header height for small screens */
     :root {
         --header-h: 60px;
     }
