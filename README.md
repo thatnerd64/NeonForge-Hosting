@@ -54,7 +54,7 @@ cn-hosting-website/
 3. **Services**: Four simple plans (LFIT, Starter, Growing, Pro) with clear feature lists
 4. **Pricing**: Four transparent pricing tiers ($0.50, $2, $5, $10 per month) with no hidden fees
 5. **Contact**: Smart contact form with plan selection auto-fill and Discord/email support
-6. **Disclaimer**: Honest transparency about being a small operation
+6. **Disclaimer**: Honest transparency about being a small operation, including uptime limitations
 7. **Footer**: Quick links, support options, and social connections
 
 ## 🎨 Customization
