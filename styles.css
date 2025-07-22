@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+:root {
+    --header-h: 80px; /* Default header height for desktop and larger screens */
+}
+
 html, body {
     width: 100%;
     overflow-x: hidden;
@@ -40,7 +44,8 @@ body {
     background: rgba(0, 0, 0, 0.95);
     backdrop-filter: blur(10px);
     z-index: 1000;
-    padding: 1.2rem 0;
+    height: var(--header-h); /* use the shared header height */
+    padding: calc(env(safe-area-inset-top) + 0.5rem) 0 0.5rem; /* safe-area + some breathing room */
     border-bottom: 1px solid #333;
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
 }
@@ -143,6 +148,8 @@ body {
     padding: 0.5rem;
     border-radius: 6px;
     transition: all 0.3s ease;
+    border: none;
+    background: transparent;
 }
 
 .hamburger:hover {
@@ -175,7 +182,7 @@ body {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    padding-top: var(--header-h);
     background: #000000;
     position: relative;
 }
@@ -837,8 +844,29 @@ body {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Override the shared header height for small screens */
+    :root {
+        --header-h: 60px;
+    }
+
+    /* compact horizontal logo */
+    .nav-logo {
+        flex-direction: row;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    /* tighten flex spacing to avoid horizontal overflow */
+    .nav-container {
+        gap: 0;
+    }
     .hamburger {
-        display: flex;
+        margin-left: auto;
+    }
+
+    /* make sure the slide-down menu sits just below the shorter bar */
+    .nav-menu.active {
+        top: var(--header-h);
     }
     
     .nav-menu {
