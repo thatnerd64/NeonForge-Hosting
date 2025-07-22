@@ -3,6 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 :root {
@@ -491,12 +492,12 @@ section {
 }
 
 .service-card:hover::before {
-    transform: scaleX(1);
+    transform: scaleX(0);
 }
 
 .service-card:hover {
-    border-color: #FF8C00;
-    box-shadow: 0 0 30px rgba(255, 140, 0, 0.1);
+    border-color: #333;
+    box-shadow: none;
 }
 
 .service-icon {
@@ -512,8 +513,8 @@ section {
 }
 
 .service-card:hover .service-icon {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 140, 0, 0.3);
+    transform: none;
+    box-shadow: none;
 }
 
 .service-icon i {
@@ -557,7 +558,7 @@ section {
 
 .service-card.budget-service:hover {
     border-color: #4CAF50;
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.2);
+    box-shadow: none;
 }
 
 .service-card.budget-service .service-icon {
@@ -629,13 +630,13 @@ section {
 }
 
 .target-audience-item:hover::before {
-    left: 100%;
+    left: -100%;
 }
 
 .target-audience-item:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 140, 0, 0.4);
-    box-shadow: 0 10px 30px rgba(255, 140, 0, 0.2);
+    transform: none;
+    border-color: #333;
+    box-shadow: none;
 }
 
 .target-icon {
@@ -651,8 +652,8 @@ section {
 }
 
 .target-audience-item:hover .target-icon {
-    transform: scale(1.1);
-    box-shadow: 0 0 20px rgba(255, 140, 0, 0.4);
+    transform: none;
+    box-shadow: none;
 }
 
 .target-icon i {
@@ -725,7 +726,7 @@ section {
 }
 
 .pricing-card:hover::before {
-    transform: scaleX(1);
+    transform: scaleX(0);
 }
 
 .pricing-card.featured {
@@ -734,13 +735,13 @@ section {
 }
 
 .pricing-card:hover {
-    border-color: #FF8C00;
-    box-shadow: 0 0 30px rgba(255, 140, 0, 0.1);
+    border-color: #333;
+    box-shadow: none;
 }
 
 .pricing-card.featured:hover {
-    border-color: #FFB6C1;
-    box-shadow: 0 0 30px rgba(255, 182, 193, 0.2);
+    border-color: #FF8C00;
+    box-shadow: none;
 }
 
 .pricing-card.budget {
@@ -764,7 +765,7 @@ section {
 
 .pricing-card.budget:hover {
     border-color: #4CAF50;
-    box-shadow: 0 0 20px rgba(76, 175, 80, 0.2);
+    box-shadow: none;
 }
 
 .pricing-card.budget .amount {
