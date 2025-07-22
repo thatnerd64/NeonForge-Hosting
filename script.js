@@ -374,6 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const subjectInput = document.querySelector('#contact input[placeholder="Subject"]');
             if (subjectInput && planName && price) {
                 subjectInput.value = `$${price} ${planName} Plan`;
+                subjectInput.focus();
             }
         });
     });
