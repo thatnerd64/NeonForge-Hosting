@@ -1135,3 +1135,6 @@ section {
     transform: scale(0.95);
     transition: transform 0.1s ease;
 }
+.service-card.budget-service .service-icon i {
+    color: #4CAF50;
+}
